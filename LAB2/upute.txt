@@ -1,0 +1,26 @@
+# File - SRS_LAB2
+
+U tom file-u sam slika funkcionalnost kojom raspolaže moj program i na koji način se zadaju naredbe.
+
+--------------------------------------------------------------------------------------------------------
+1. na predavanju smo radili da se svaka lozinka mora sačuvati s kriptografskom funkcijom sažetka
+
+Ja sam to i implementirala s time da sam implementirala i da se ne može vidjeti korisničko ime tj. da je i ono 
+sačuvano s PBKDF2, baš zbog toga razloga jer napadač ne smije znati je li korisničko ime već postoji u bazi podataka sustava.
+
+2. Lozinke trebaju biti odgovarajuće kompleksnosti i često se mijenjati
+
+To samo korisnik može napraviti. On određuje veličinu svoje lozinke. 
+
+3. Spriječiti pogađanje
+
+Spriječila sam na način isti kao što sam i rekla u 1. bulletu, koristila sam kriptografsku funkciju sažetka
+koja nije reverzibilna tako da ne može doći do pogađanja.
+
+4. Tijekom unosa paziti da ih netko ne otkrije
+
+Koristila sam module getpass koji omogućava korisniku da upiše lozinku bez da se vidi
+
+5. Zaštititi tijekom prijenosa
+
+Taj dio nisam mogla implementirati jer radim na svom računalu.

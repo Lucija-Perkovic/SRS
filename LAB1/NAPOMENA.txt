@@ -1,0 +1,16 @@
+U tajnik.py je spremljen cijeli program
+Za deriviranje ključa koristim PBKDF2 jer on koristi HMAC i pritom osigurava integritet.
+Za pohranu password-a koristim AES jer je njega moguće kriptirati i dekriptirati, pa je lagan za korištebhe z skzlaju da se dohvaća password.
+Bash skriptu nisam mogla testirati jer nemam pristup linuxu trenutno.
+Odlučila sam salt i sve stavljati u posebnu datoteku tako da ne moram razdvajati kasnije. Shvaćam da nije najbrže rješenje, ali nije ni potrebna brzina u ovom slučaju.
+PBKDF2 derivacija ključa hashira sve podatke 1000000 puta pa je zbog toga razloga sigurna.
+
+
+// inicijaliziranje masterpassworda
+python tajnik.py --init masterP
+
+// postavljanje passworda
+python tajnik.py --put masterP --webpage www.fer.hr --password pozz
+
+// dohvacanje passworda
+ python tajnik.py --get masterP --webpage www.fer.hr
